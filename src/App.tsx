@@ -1,5 +1,12 @@
 import NavBar from "./components/NavBar";
-import Card from "./components/card";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import "./App.css";
 
 function App() {
@@ -31,18 +38,39 @@ function App() {
               Our Services
             </h2>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
-              <Card
-                title='Contracting'
-                content="Whether it's government or private contracts, we have you covered."
-              />
-              <Card
-                title='Web Development'
-                content='Custom web applications built with the latest technologies to meet your specific requirements.'
-              />
-              <Card
-                title='Mobile App Development'
-                content='Native and cross-platform mobile applications for iOS and Android devices.'
-              />
+              <Card>
+                <CardHeader>
+                  <CardTitle>Contracting</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Whether it's government or private contracts, we have you
+                    covered.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Web Development</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Custom web applications built with the latest technologies
+                    to meet your specific requirements.
+                  </p>
+                </CardContent>
+              </Card>
+              <Card>
+                <CardHeader>
+                  <CardTitle>Mobile App Development</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>
+                    Native and cross-platform mobile applications for iOS and
+                    Android devices.
+                  </p>
+                </CardContent>
+              </Card>
             </div>
           </div>
         </section>
