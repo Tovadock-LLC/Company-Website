@@ -12,17 +12,17 @@ import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
-    <div className='flex flex-col min-h-screen'>
+    <div className='flex flex-col min-h-screen bg-[#2b53a7]'>
       <NavBar />
       <main className='flex-1'>
         <section className='w-full py-12 md:py-24 lg:py-32 xl:py-48'>
           <div className='px-4 md:px-6'>
             <div className='flex flex-col items-center space-y-4 text-center'>
               <div className='space-y-2'>
-                <h1 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none'>
+                <h1 className='text-3xl text-white font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none'>
                   Tovadock
                 </h1>
-                <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
+                <p className='mx-auto max-w-[700px] text-white md:text-xl dark:text-gray-400'>
                   We deliver cutting-edge software solutions tailored to your
                   business needs. Let's transform your ideas into reality.
                 </p>
@@ -79,10 +79,10 @@ export default function Home() {
           <div className='px-4 md:px-6'>
             <div className='grid grid-cols-1 md:grid-cols-2 gap-6 items-center'>
               <div>
-                <h2 className='text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4'>
+                <h2 className='text-3xl text-white font-bold tracking-tighter sm:text-4xl md:text-5xl mb-4'>
                   About Us
                 </h2>
-                <p className='text-gray-500 dark:text-gray-400 mb-4'>
+                <p className='text-white dark:text-gray-400 mb-4'>
                   Tovadock was started in 2024 by two Army veterans, Jim
                   Knudstrup and Michael Smith. With over two decades of combined
                   experience in software engineering, we've helped numerous
@@ -111,9 +111,6 @@ export default function Home() {
       <footer className='w-full py-6 bg-gray-100 dark:bg-gray-800'>
         <div className='px-4 md:px-6'>
           <div className='flex flex-col items-center justify-between gap-4 md:flex-row'>
-            <div className='flex items-center space-x-2'>
-              <span className='font-bold'>Tovadock</span>
-            </div>
             <p className='text-center text-sm text-gray-500 dark:text-gray-400'>
               © 2024 Tovadock. All rights reserved.
             </p>
