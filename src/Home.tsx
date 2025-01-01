@@ -1,12 +1,5 @@
 import NavBar from "./components/NavBar";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import "./App.css";
 import { Link } from "react-router-dom";
 
