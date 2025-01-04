@@ -1,25 +1,25 @@
 export default function NavBar() {
   return (
-    <header className='sticky px-4 top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60'>
+    <header className='px-8 top-0 z-50 w-full bg-white/0'>
       <div className='flex h-14 items-center'>
         <a href='/' className='flex items-center space-x-2'>
-          <span className='font-bold text-[#2b53a7]'>Tovadock</span>
+          <span className='font-bold text-white'>Tovadock</span>
         </a>
         <nav className='ml-auto flex gap-4 sm:gap-6'>
           <a
-            className='text-sm text-[#2b53a7] font-medium hover:underline underline-offset-4'
+            className='text-sm text-white font-medium hover:underline underline-offset-4'
             href='#services'
           >
             Services
           </a>
           <a
-            className='text-sm text-[#2b53a7] font-medium hover:underline underline-offset-4'
+            className='text-sm text-white font-medium hover:underline underline-offset-4'
             href='#about'
           >
             About
           </a>
           <a
-            className='text-sm text-[#2b53a7] font-medium hover:underline underline-offset-4'
+            className='text-sm text-white font-medium hover:underline underline-offset-4'
             href='#contact'
           >
             Contact
