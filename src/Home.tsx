@@ -7,7 +7,10 @@ export default function Home() {
   return (
     <div className='flex flex-col min-h-screen '>
       <main className='flex-1'>
-        <section className="w-full pb-100 bg-[url('/images/tovadock-background.webp')] bg-cover h-screen">
+        <section
+          className="w-full pb-[25rem] bg-cover h-screen"
+          style={{ backgroundImage: "url('/images/tovadock-background.webp')" }}
+        >
           <NavBar />
           <div className='px-8 pt-20 md:px-6'>
             <div className='flex flex-col space-y-4'>
