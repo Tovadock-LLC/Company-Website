@@ -3,6 +3,8 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import "./App.css";
 import { Link } from "react-router-dom";
 import { AnimeTest } from "./AnimeTest";
+import { WavingFlag } from "./WavingFlag";
+import { WaterDropGrid } from "./WaterDropGrid";
 
 export default function Home() {
   return (
@@ -14,6 +16,15 @@ export default function Home() {
         >
           <NavBar />
           <AnimeTest />
+          {/* <WavingFlag
+            stripeCount={7} // Simplified for testing
+            dotCount={20}
+            waveAmplitude={20}
+            waveSpeed={3000}
+            dotStaggerDelay={50}
+            className="absolute top-20 left-20 z-10" // Better positioning for testing
+          /> */}
+          <WaterDropGrid />
           <div className='px-8 pt-20 md:px-6'>
             <div className='flex flex-col space-y-4'>
               <div className='space-y-2'>

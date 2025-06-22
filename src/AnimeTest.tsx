@@ -1,4 +1,4 @@
-import { animate, createScope, createSpring, createDraggable, Scope } from 'animejs';
+import { animate, createScope, createSpring, createDraggable, Scope, stagger } from 'animejs';
 import { useEffect, useRef, useState } from 'react';
 import tdLogo from '../public/vite.svg';
 
@@ -12,6 +12,11 @@ export const AnimeTest = () => {
         scope.current = createScope({ root }).add(self => {
 
             // Every anime.js instances declared here are now scopped to <div ref={root}>
+            animate('.square', {
+                x: '17rem',
+                scale: stagger([1, .1]),
+                delay: stagger(100),
+            });
 
             // Created a bounce animation loop
             animate('.logo', {
@@ -57,6 +62,22 @@ export const AnimeTest = () => {
 
     return (
         <div ref={root}>
+            <div className="">
+                <img
+                    src={tdLogo}
+                    className="square"
+                    alt="React logo"
+                    onClick={handleClick}
+                />
+            </div>
+            <div className="">
+                <img
+                    src={tdLogo}
+                    className="square"
+                    alt="React logo"
+                    onClick={handleClick}
+                />
+            </div>
             <div className="large centered row">
                 <img
                     src={tdLogo}
