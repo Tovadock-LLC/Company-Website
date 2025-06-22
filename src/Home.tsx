@@ -2,6 +2,7 @@ import NavBar from "./components/NavBar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import "./App.css";
 import { Link } from "react-router-dom";
+import { AnimeTest } from "./AnimeTest";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
           style={{ backgroundImage: "url('/images/tovadock-background.webp')" }}
         >
           <NavBar />
+          <AnimeTest />
           <div className='px-8 pt-20 md:px-6'>
             <div className='flex flex-col space-y-4'>
               <div className='space-y-2'>
