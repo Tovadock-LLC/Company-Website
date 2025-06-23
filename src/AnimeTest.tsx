@@ -2,6 +2,8 @@ import { animate, createScope, createSpring, createDraggable, Scope, stagger } f
 import { useEffect, useRef, useState } from 'react';
 import tdLogo from '../public/vite.svg';
 
+
+
 export const AnimeTest = () => {
     const root = useRef<HTMLDivElement>(null);
     const scope = useRef<Scope | null>(null);
@@ -13,9 +15,18 @@ export const AnimeTest = () => {
 
             // Every anime.js instances declared here are now scopped to <div ref={root}>
             animate('.square', {
-                x: '17rem',
-                scale: stagger([1, .1]),
-                delay: stagger(100),
+                // x: '17rem',
+                x: stagger('2rem',
+                    {
+                        start: 16
+                    }
+                )
+                // x: stagger(['16rem', '3rem'])
+                // x: stagger('2rem', {
+                // start: '16rem'
+                // })
+                // scale: stagger([1, .1]),
+                // delay: stagger(100),
             });
 
             // Created a bounce animation loop
@@ -60,24 +71,31 @@ export const AnimeTest = () => {
         });
     };
 
+    const SquareTest = () => {
+        const squares = 3;
+
+        const Square = () => {
+            return (
+                <img
+                    src={tdLogo}
+                    className="square"
+                />
+            );
+        }
+
+        return (
+            <>
+                {/* Create as many squares as needed */}
+                {Array.from({ length: squares }).map((_, index) => (
+                    <Square key={index} />
+                ))}
+            </>
+        );
+    }
+
     return (
         <div ref={root}>
-            <div className="">
-                <img
-                    src={tdLogo}
-                    className="square"
-                    alt="React logo"
-                    onClick={handleClick}
-                />
-            </div>
-            <div className="">
-                <img
-                    src={tdLogo}
-                    className="square"
-                    alt="React logo"
-                    onClick={handleClick}
-                />
-            </div>
+            <SquareTest />
             <div className="large centered row">
                 <img
                     src={tdLogo}
@@ -88,7 +106,7 @@ export const AnimeTest = () => {
             </div>
             <div className="medium row">
                 <fieldset className="controls">
-                    <button onClick={handleClick}>rotations: {rotations}</button>
+                    <button>rotations: {rotations}</button>
                 </fieldset>
             </div>
         </div>
