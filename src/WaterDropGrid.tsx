@@ -17,7 +17,7 @@ const Dot: FC<DotProps> = ({ index }) => {
         >
 
             <div
-                className="dot-point size-2 bg-gradient-to-b rounded-full from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-600 group-hover:to-white"
+                className="dot-point size-2 bg-linear-to-b rounded-full from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-600 group-hover:to-white"
                 data-index={index}
             />
         </div>

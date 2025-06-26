@@ -11,7 +11,7 @@ export default function Home() {
     <div className='flex flex-col min-h-screen '>
       <main className='flex-1'>
         <section
-          className="w-full pb-[25rem] bg-cover h-screen"
+          className="w-full pb-100 bg-cover h-screen"
           style={{ backgroundImage: "url('/images/tovadock-background.webp')" }}
         >
           <NavBar />
