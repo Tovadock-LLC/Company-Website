@@ -15,7 +15,7 @@ const Dot: FC<DotProps> = ({ index }) => {
             className="group cursor-crosshair rounded-full p-2 transition-colors hover:bg-slate-600"
             data-index={index}
         >
-
+            {/* Dot */}
             <div
                 className="dot-point size-2 bg-linear-to-b rounded-full from-slate-700 to-slate-400 opacity-50 group-hover:from-indigo-600 group-hover:to-white"
                 data-index={index}
@@ -64,8 +64,8 @@ const DotGrid: FC = () => {
         const clickedElement = (e.target as HTMLElement).closest('[data-index]') as HTMLElement;
         const index = clickedElement?.dataset.index;
 
-        console.log('Clicked index:', index);
-        console.log('Scope ref exists:', !!scopeRef.current);
+        // console.log('Clicked index:', index);
+        // console.log('Scope ref exists:', !!scopeRef.current);
 
         if (index && scopeRef.current) {
             console.log('Calling ripple method...');

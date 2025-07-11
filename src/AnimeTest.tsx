@@ -81,7 +81,7 @@ export const AnimeTest = () => {
                     className="square"
                 />
             );
-        }
+        };
 
         return (
             <>
