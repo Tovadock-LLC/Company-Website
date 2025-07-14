@@ -9,13 +9,13 @@ export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-900">
       {/* <WaterDropGrid /> */}
-      <div className="xl:w-7xl">
+      <div>
         <main className="flex-1">
+          <NavBar />
           <section
             className="h-screen w-full bg-cover pb-100"
             // style={{ backgroundImage: "url('/images/tovadock-background.webp')" }}
           >
-            <NavBar />
             <HeroBanner />
             {/* <AnimeTest /> */}
             {/* <WaterDropGrid /> */}

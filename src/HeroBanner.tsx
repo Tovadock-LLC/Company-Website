@@ -340,7 +340,7 @@ const HeroText: FC = () => {
 
 export const HeroBanner: FC = () => {
   return (
-    <div className="flex h-9/12 w-full justify-between px-8">
+    <div className="flex h-9/12 w-full justify-between">
       <HeroText />
       <HeroAnimation />
     </div>
