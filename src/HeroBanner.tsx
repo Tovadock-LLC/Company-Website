@@ -358,11 +358,13 @@ const HeroText: FC = () => {
 
 export const HeroBanner: FC = () => {
   return (
-    <ContentWrapper>
-      <div className="flex h-9/12 w-full justify-between">
-        <HeroText />
-        <HeroAnimation />
-      </div>
-    </ContentWrapper>
+    <div className="w-full bg-linear-to-r from-slate-900 from-50% to-rose-950">
+      <ContentWrapper>
+        <div className="flex h-9/12 w-full justify-between">
+          <HeroText />
+          <HeroAnimation />
+        </div>
+      </ContentWrapper>
+    </div>
   );
 };
