@@ -10,30 +10,9 @@ import {
   stagger,
 } from "animejs";
 
+import { ContentWrapper } from "@/components/helpers/ContentWrapper";
 import SvgTest from "@/images/svg/svgtest.svg?react";
 import EagleHead from "@/images/svg/eagle.svg?react";
-import path from "path";
-
-const AnimeFC: FC = () => {
-  const rootRef = useRef<HTMLDivElement>(null);
-  const scopeRef = useRef<Scope | null>(null);
-
-  useEffect(() => {
-    if (!rootRef.current) return;
-
-    scopeRef.current = createScope({ root: rootRef }).add((self) => {
-      // Do animation things
-    });
-
-    return () => scopeRef.current?.revert();
-  }, []);
-
-  return (
-    <>
-      <div ref={rootRef}></div>
-    </>
-  );
-};
 
 type BasicSvgCircleProps = {
   radius?: number; // Radius of the circle
@@ -308,13 +287,52 @@ const EagleAnimation: FC = () => {
   );
 };
 
+/**
+ * A little clunky but it avoids animejs scope collisions
+ */
+export const EagleWrapper: FC = () => {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const scopeRef = useRef<Scope | null>(null);
+
+  useEffect(() => {
+    if (!rootRef.current) return;
+
+    scopeRef.current = createScope({ root: rootRef }).add((self) => {
+      // Do animation things
+      animate(".eagle", {
+        scale: [{ from: 1, to: 1.02 }, { to: 1 }],
+        y: [
+          { to: "-4px", ease: "inOutQuad" },
+          { to: 0, ease: "inOutQuad" },
+        ],
+        ease: "inOutQuad",
+        duration: 9200,
+        loop: true,
+        // loopDelay: 1000,
+      });
+    });
+
+    return () => scopeRef.current?.revert();
+  }, []);
+
+  return (
+    <>
+      <div ref={rootRef}>
+        <div className="eagle">
+          <EagleAnimation />
+        </div>
+      </div>
+    </>
+  );
+};
+
 const HeroAnimation: FC = () => {
   return (
     <>
       {/* <div className="relative"> */}
       {/* <div className="absolute top-0 h-full w-full bg-linear-to-r from-slate-900 via-rose-950 to-slate-900"></div> */}
       {/* <div className="absolute top-0 h-full w-full bg-radial from-rose-950 to-slate-900"></div> */}
-      <EagleAnimation />
+      <EagleWrapper />
       {/* </div> */}
     </>
   );
@@ -340,9 +358,11 @@ const HeroText: FC = () => {
 
 export const HeroBanner: FC = () => {
   return (
-    <div className="flex h-9/12 w-full justify-between">
-      <HeroText />
-      <HeroAnimation />
-    </div>
+    <ContentWrapper>
+      <div className="flex h-9/12 w-full justify-between">
+        <HeroText />
+        <HeroAnimation />
+      </div>
+    </ContentWrapper>
   );
 };

@@ -3,7 +3,7 @@ import { ContentWrapper } from "@/components/helpers/ContentWrapper";
 
 export default function NavBar() {
   return (
-    <header className="top-0 z-50 w-full bg-sky-950 px-8">
+    <header className="sticky top-0 z-50 w-full bg-sky-950 px-8">
       <ContentWrapper>
         <div className="flex h-14 items-center">
           <a href="/" className="flex items-center space-x-2">
