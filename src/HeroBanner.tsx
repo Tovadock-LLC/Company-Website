@@ -11,7 +11,8 @@ import {
 } from "animejs";
 
 import SvgTest from "@/images/svg/svgtest.svg?react";
-import EagleHead from "@/images/svg/eagle_head.svg?react";
+import EagleHead from "@/images/svg/eagle.svg?react";
+import path from "path";
 
 const AnimeFC: FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
@@ -200,18 +201,6 @@ const Eagle: FC = () => {
   );
 };
 
-const HeroAnimation: FC = () => {
-  const screenWidth = window.innerWidth;
-  const screenHeight = window.innerHeight;
-
-  return (
-    <div className="w-max">
-      {/* <BasicSvgCircle /> */}
-      <Eagle />
-    </div>
-  );
-};
-
 const SvgPathTest: FC = () => {
   const rootRef = useRef<HTMLDivElement>(null);
   const scopeRef = useRef<Scope | null>(null);
@@ -273,17 +262,75 @@ const SvgPathTest: FC = () => {
   );
 };
 
+const EagleAnimation: FC = () => {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const scopeRef = useRef<Scope | null>(null);
+
+  useEffect(() => {
+    if (!rootRef.current) return;
+
+    scopeRef.current = createScope({ root: rootRef }).add((self) => {
+      const [$circle] = utils.$("circle");
+      // $circle.className = "fill-white"
+      $circle.setAttribute("class", "fill-white");
+
+      animate(svg.createDrawable("path"), {
+        draw: ["0 0", "0 1", "1 1"],
+        ease: "inOutQuad",
+        duration: 7000,
+        delay: stagger(100),
+        loop: true,
+      });
+
+      animate("circle", {
+        opacity: [{ from: 0, to: 1 }, { to: 0 }],
+        ease: "inOutQuad",
+        duration: 9200,
+        loop: true,
+        // loopDelay: 1000,
+      });
+    });
+
+    return () => scopeRef.current?.revert();
+  }, []);
+
+  return (
+    <div className="relative">
+      {/* <div className="" ref={rootRef}> */}
+      <div ref={rootRef}>
+        <EagleHead className="w-96 stroke-2" />
+      </div>
+      <div className="absolute top-0">
+        <EagleHead className="w-96 opacity-50" />
+      </div>
+      {/* <div className="absolute top-0 -z-10 h-full w-full bg-linear-to-r from-slate-900 to-rose-950"></div> */}
+    </div>
+  );
+};
+
+const HeroAnimation: FC = () => {
+  return (
+    <>
+      {/* <div className="relative"> */}
+      {/* <div className="absolute top-0 h-full w-full bg-linear-to-r from-slate-900 via-rose-950 to-slate-900"></div> */}
+      {/* <div className="absolute top-0 h-full w-full bg-radial from-rose-950 to-slate-900"></div> */}
+      <EagleAnimation />
+      {/* </div> */}
+    </>
+  );
+};
+
 const HeroText: FC = () => {
   return (
-    <div className="px-8 pt-20 md:px-6">
+    <div className="pt-8">
       <div className="flex flex-col space-y-4">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
             Tovadock
           </h1>
           <p className="max-w-[700px] text-white md:text-xl dark:text-gray-400">
-            We deliver cutting-edge software solutions tailored to your business
-            needs. Let's transform your ideas into reality.
+            We deliver cutting-edge software solutions <br /> tailored to your
+            business needs. <br /> Let's transform your ideas into reality.
           </p>
         </div>
       </div>
@@ -293,9 +340,9 @@ const HeroText: FC = () => {
 
 export const HeroBanner: FC = () => {
   return (
-    <div className="flex h-9/12 w-full justify-between bg-slate-900">
+    <div className="flex h-9/12 w-full justify-between px-8">
       <HeroText />
-      {/* <HeroAnimation /> */}
+      <HeroAnimation />
     </div>
   );
 };
