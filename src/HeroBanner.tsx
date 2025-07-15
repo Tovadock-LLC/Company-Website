@@ -13,6 +13,7 @@ import {
 import { ContentWrapper } from "@/components/helpers/ContentWrapper";
 import SvgTest from "@/images/svg/svgtest.svg?react";
 import EagleHead from "@/images/svg/eagle.svg?react";
+import Stars from "@/images/svg/stars.svg?react";
 
 type BasicSvgCircleProps = {
   radius?: number; // Radius of the circle
@@ -318,9 +319,66 @@ export const EagleWrapper: FC = () => {
   return (
     <>
       <div ref={rootRef}>
-        <div className="eagle">
+        <div className="eagle pl-8">
           <EagleAnimation />
         </div>
+      </div>
+    </>
+  );
+};
+
+export const StarsWrapper: FC = () => {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const scopeRef = useRef<Scope | null>(null);
+
+  useEffect(() => {
+    if (!rootRef.current) return;
+
+    scopeRef.current = createScope({ root: rootRef }).add((self) => {
+      // Do animation things
+      // animate("._stars", {
+      //   rotate: {
+      //     from: "-1turn",
+      //     delay: 0,
+      //     duration: 19200,
+      //   },
+      //   ease: "linear",
+      //   // ease: "inOutQuad",
+      //   loop: true,
+      //   // loopDelay: 1000,
+      // });
+
+      animate("._stars", {
+        scale: [{ from: 1, to: 1.02 }, { to: 1 }],
+        y: [
+          { to: "-4px", ease: "inOutQuad" },
+          { to: 0, ease: "inOutQuad" },
+        ],
+
+        ease: "inOutQuad",
+        duration: 9200,
+        loop: true,
+        // fill: "color(display-p3 1.0 0.267 0.267 / 1.0)",
+        // fill: "fill-red-500",
+        // fill: "hsl(255, 168, 40)",
+        // loopDelay: 1000,
+      });
+    });
+
+    animate(".star", {
+      opacity: [{ from: 0, to: 1 }, { to: 0 }],
+      duration: 2000,
+      delay: stagger(500),
+      loop: true,
+    });
+    return () => scopeRef.current?.revert();
+  }, []);
+
+  return (
+    <>
+      <div ref={rootRef}>
+        <Stars className="_stars w-[800px]" />
+        {/* <Stars className="_stars w-[400px]" /> */}
       </div>
     </>
   );
@@ -329,16 +387,25 @@ export const EagleWrapper: FC = () => {
 const HeroAnimation: FC = () => {
   return (
     <>
-      {/* <div className="relative"> */}
-      {/* <div className="absolute top-0 h-full w-full bg-linear-to-r from-slate-900 via-rose-950 to-slate-900"></div> */}
-      {/* <div className="absolute top-0 h-full w-full bg-radial from-rose-950 to-slate-900"></div> */}
-      <EagleWrapper />
-      {/* </div> */}
+      <div className="relative flex flex-col items-center justify-center">
+        {/* <div className="absolute top-0 h-full w-full bg-linear-to-r from-slate-900 via-rose-950 to-slate-900"></div> */}
+        {/* <div className="absolute top-0 h-full w-full bg-radial from-rose-950 to-slate-900"></div> */}
+        <div className="absolute">
+          <StarsWrapper />
+        </div>
+        <EagleWrapper />
+      </div>
     </>
   );
 };
 
 const HeroText: FC = () => {
+  /**
+   * 
+    ✓ Secure, Section 508 Compliant Web & Application Development
+    ✓ Intelligent Solutions Powered by AI/ML and Data Integration
+    ✓ SDVOSB-Certified: Mission-Focused Excellence & Reliable Partnership
+   */
   return (
     <div className="pt-8">
       <div className="flex flex-col space-y-4">
