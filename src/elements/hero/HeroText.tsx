@@ -1,6 +1,7 @@
 import { type FC, type PropsWithChildren } from "react";
 
-import Star from "@/images/svg/star.svg?react";
+import { Button } from "@/components/ui/button";
+import { Star } from "@/images/icons";
 
 const BulletPoint: FC<PropsWithChildren> = ({ children }) => {
   return (
@@ -15,6 +16,18 @@ const BulletPoint: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
+const CTAButton: FC<PropsWithChildren> = ({ children }) => {
+  return (
+    <div className="flex w-full justify-center py-4">
+      <a href="mailto:tovadockllc@gmail.com">
+        <Button variant="cta" size="lg">
+          {children}
+        </Button>
+      </a>
+    </div>
+  );
+};
+
 export const HeroText: FC = () => {
   return (
     <div className="pt-8">
@@ -24,12 +37,12 @@ export const HeroText: FC = () => {
             Step into the Future
           </h1>
           <div>
-            <p className="max-w-3/4 text-2xl text-white dark:text-gray-400">
+            <p className="max-w-3/4 py-8 text-2xl text-white dark:text-gray-400">
               We deliver cutting-edge software solutions for any mission,
               anywhere. Let's transform your ideas into reality.
             </p>
 
-            <div className="max-w-1/2 py-2">
+            <div className="max-w-3/4">
               <BulletPoint>
                 Secure, Section 508 Compliant Web & Application Development
               </BulletPoint>
@@ -37,6 +50,9 @@ export const HeroText: FC = () => {
                 Intelligent Solutions Powered by AI/ML and Data Integration
               </BulletPoint>
               <BulletPoint>Proudly 100% SDVOSB owned and operated</BulletPoint>
+              <div className="pt-8">
+                <CTAButton>Contact Us</CTAButton>
+              </div>
             </div>
           </div>
         </div>

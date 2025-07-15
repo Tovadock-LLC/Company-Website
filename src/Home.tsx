@@ -1,37 +1,16 @@
 import NavBar from "./components/NavBar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-// import { AnimeTest } from "./AnimeTest";
-import { WaterDropGrid } from "./WaterDropGrid";
 import { HeroBanner } from "@/elements/hero/HeroBanner";
 
 export default function Home() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center bg-slate-900">
-      {/* <WaterDropGrid /> */}
       <div>
         <main className="flex-1">
           <NavBar />
-          <section
-            className="h-screen w-full bg-cover pb-100"
-            // style={{ backgroundImage: "url('/images/tovadock-background.webp')" }}
-          >
+          <section id="hero-banner" className="w-full bg-cover xl:h-[90vh]">
             <HeroBanner />
-            {/* <AnimeTest /> */}
-            {/* <WaterDropGrid /> */}
-            {/* <div className="px-8 pt-20 md:px-6">
-            <div className="flex flex-col space-y-4">
-              <div className="space-y-2">
-                <h1 className="text-3xl text-white font-bold tracking-tighter sm:text-4xl md:text-5xl lg:text-6xl/none">
-                  Tovadock
-                </h1>
-                <p className="max-w-[700px] text-white md:text-xl dark:text-gray-400">
-                  We deliver cutting-edge software solutions tailored to your
-                  business needs. Let's transform your ideas into reality.
-                </p>
-              </div>
-            </div>
-          </div> */}
           </section>
           <section
             id="services"
