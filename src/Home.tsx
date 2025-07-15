@@ -1,18 +1,23 @@
-import { NavBar } from "./components/NavBar";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
+
+import { NavBar } from "@/components/NavBar";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeroBanner } from "@/elements/hero/HeroBanner";
+import { Services } from "@/elements/hero/Services";
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center bg-slate-900">
+    <div className="flex min-h-screen flex-col items-center justify-center">
       <div>
         <main className="flex-1">
           <NavBar />
-          <section id="hero-banner" className="w-full bg-cover xl:h-[94vh]">
+          <section id="hero-banner" className="w-full xl:h-[94vh]">
             <HeroBanner />
           </section>
-          <section
+          <section>
+            <Services />
+          </section>
+          {/* <section
             id="services"
             className="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-slate-500"
           >
@@ -56,7 +61,7 @@ export default function Home() {
                 </Card>
               </div>
             </div>
-          </section>
+          </section> */}
           <section
             id="about"
             className="w-full bg-[#2b53a7] py-12 md:py-24 lg:py-32"

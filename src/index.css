@@ -73,7 +73,8 @@
   /* --color-primary: var(--primary); */
   --color-primary: theme(colors.slate.900);
   --color-primary-foreground: var(--primary-foreground);
-  --color-secondary: var(--secondary);
+  /* --color-secondary: var(--secondary); */
+  --color-secondary: theme(colors.rose.950);
   --color-secondary-foreground: var(--secondary-foreground);
   --color-muted: var(--muted);
   --color-muted-foreground: var(--muted-foreground);
