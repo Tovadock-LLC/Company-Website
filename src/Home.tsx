@@ -14,7 +14,7 @@ export default function Home() {
           <section id="hero-banner" className="w-full xl:h-[94vh]">
             <HeroBanner />
           </section>
-          <section>
+          <section id="services">
             <Services />
           </section>
           {/* <section
