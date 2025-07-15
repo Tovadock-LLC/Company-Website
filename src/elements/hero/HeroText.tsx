@@ -6,7 +6,7 @@ import { Star } from "@/images/icons";
 const BulletPoint: FC<PropsWithChildren> = ({ children }) => {
   return (
     <div className="flex py-1">
-      <div className="pt-1">
+      <div className="pt-[6px]">
         <Star className="size-4" />
       </div>
       <div className="px-2 font-bold text-white md:text-xl dark:text-gray-400">

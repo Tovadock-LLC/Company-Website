@@ -76,13 +76,11 @@ export const EagleWrapper: FC = () => {
   }, []);
 
   return (
-    <>
-      <div ref={rootRef}>
-        <div className="eagle pl-8">
-          <EagleAnimation />
-        </div>
+    <div ref={rootRef}>
+      <div className="eagle pl-8">
+        <EagleAnimation />
       </div>
-    </>
+    </div>
   );
 };
 
@@ -117,24 +115,20 @@ export const StarsWrapper: FC = () => {
   }, []);
 
   return (
-    <>
-      <div ref={rootRef}>
-        <Stars className="_stars w-[800px]" />
-      </div>
-    </>
+    <div ref={rootRef}>
+      <Stars className="_stars w-[600px]" />
+    </div>
   );
 };
 
 const HeroAnimation: FC = () => {
   return (
-    <>
-      <div className="relative flex flex-col items-center justify-center">
-        <div className="absolute">
-          <StarsWrapper />
-        </div>
-        <EagleWrapper />
+    <div className="relative flex flex-col items-center justify-center">
+      <div className="absolute">
+        <StarsWrapper />
       </div>
-    </>
+      <EagleWrapper />
+    </div>
   );
 };
 
@@ -146,10 +140,12 @@ export const HeroBanner: FC = () => {
       </div>
       <ContentWrapper>
         <div className="flex h-full w-full justify-between">
-          <div className="flex max-w-1/2 flex-col justify-center">
+          <div className="flex flex-1 flex-col justify-center">
             <HeroText />
           </div>
-          <HeroAnimation />
+          <div className="flex flex-1 flex-col justify-center">
+            <HeroAnimation />
+          </div>
         </div>
       </ContentWrapper>
     </div>

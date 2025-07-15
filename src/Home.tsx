@@ -9,7 +9,7 @@ export default function Home() {
       <div>
         <main className="flex-1">
           <NavBar />
-          <section id="hero-banner" className="w-full bg-cover xl:h-screen">
+          <section id="hero-banner" className="w-full bg-cover xl:h-[94vh]">
             <HeroBanner />
           </section>
           <section
