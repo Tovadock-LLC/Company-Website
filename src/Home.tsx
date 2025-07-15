@@ -1,4 +1,4 @@
-import NavBar from "./components/NavBar";
+import { NavBar } from "./components/NavBar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
 import { HeroBanner } from "@/elements/hero/HeroBanner";
@@ -9,7 +9,7 @@ export default function Home() {
       <div>
         <main className="flex-1">
           <NavBar />
-          <section id="hero-banner" className="w-full bg-cover xl:h-[90vh]">
+          <section id="hero-banner" className="w-full bg-cover xl:h-screen">
             <HeroBanner />
           </section>
           <section

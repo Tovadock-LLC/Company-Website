@@ -140,7 +140,7 @@ const HeroAnimation: FC = () => {
 
 export const HeroBanner: FC = () => {
   return (
-    <div className="relative h-full w-full bg-linear-to-r from-slate-900 from-50% to-rose-950">
+    <div className="from-primary relative h-full w-full bg-linear-to-r from-50% to-rose-950">
       <div className="absolute bottom-0 left-1/2 pb-8">
         <ChevronDoubleDown className="size-8 fill-white stroke-none" />
       </div>
