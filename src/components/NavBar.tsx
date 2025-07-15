@@ -10,6 +10,9 @@ export default function NavBar() {
             <span className="font-bold text-white">
               <img src={logo} width={50} height={50} />
             </span>
+            <div className="text-4xl font-bold tracking-tighter text-white">
+              Tovadock
+            </div>
           </a>
           <nav className="ml-auto flex gap-4 sm:gap-6">
             <a

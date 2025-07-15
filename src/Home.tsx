@@ -1,9 +1,9 @@
 import NavBar from "./components/NavBar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Link } from "react-router-dom";
-import { AnimeTest } from "./AnimeTest";
+// import { AnimeTest } from "./AnimeTest";
 import { WaterDropGrid } from "./WaterDropGrid";
-import { HeroBanner } from "@/HeroBanner";
+import { HeroBanner } from "@/elements/hero/HeroBanner";
 
 export default function Home() {
   return (
