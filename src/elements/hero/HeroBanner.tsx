@@ -31,7 +31,6 @@ const EagleAnimation: FC = () => {
         ease: "inOutQuad",
         duration: 9200,
         loop: true,
-        // loopDelay: 1000,
       });
     });
 
