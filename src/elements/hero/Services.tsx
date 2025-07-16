@@ -10,6 +10,7 @@ import type {
 // import type
 
 import { ContentWrapper } from "@/components/helpers/ContentWrapper";
+import { SectionTitle } from "@/components/helpers/SectionTitle";
 
 // import icons for webdev, accesibility, migration, chart, devices
 import {
@@ -56,9 +57,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
 export const Services: FC = () => {
   return (
     <div className="pt-8">
-      <div className="flex w-full justify-center">
-        <h1 className="text-primary py-8 text-5xl font-bold">What We Offer</h1>
-      </div>
+      <SectionTitle>What We Offer</SectionTitle>
       <div className="flex flex-col gap-y-8">
         <ServiceCard
           title="Custom Web Application Development"
@@ -83,10 +82,9 @@ export const Services: FC = () => {
           We extend your digital reach beyond the web, delivering seamless and
           powerful applications across desktop and mobile environments. Whether
           your team needs robust internal tools for specialized tasks or
-          citizen-facing mobile apps, we build solutions that perform flawlessly
-          on any device. Our cross-platform approach ensures consistency,
-          reduces development overhead, and maximizes user engagement wherever
-          they work.
+          user-facing mobile apps, we'll build solutions for any device. Our
+          cross-platform approach ensures consistency, reduces development
+          overhead, and maximizes user engagement.
         </ServiceCard>
         <ServiceCard
           title="User-Centered Design & Section 508 Accessibility"
@@ -96,7 +94,7 @@ export const Services: FC = () => {
           We believe that government digital services should be intuitive and
           accessible to everyone. Our team specializes in human-centered design
           methodologies, ensuring that every interface is not just visually
-          appealing but also easy to use for all citizens and employees. We
+          appealing but also easy to use for all users and employees. We
           rigorously apply Section 508 compliance standards from conception
           through development, guaranteeing inclusive experiences that meet
           federal mandates.

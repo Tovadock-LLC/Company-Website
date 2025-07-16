@@ -106,9 +106,10 @@ export const StarsWrapper: FC = () => {
     });
 
     animate(".star", {
-      opacity: [{ from: 0, to: 1 }, { to: 0 }],
-      duration: 2000,
-      delay: stagger(500),
+      opacity: [{ from: 0.5, to: 0 }, { to: 0.5 }],
+      duration: 1000,
+      delay: stagger(50),
+      loopDelay: 5000,
       loop: true,
     });
     return () => scopeRef.current?.revert();
