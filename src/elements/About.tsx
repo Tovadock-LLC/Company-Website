@@ -18,6 +18,9 @@ type ProfileCardProps = {
   imgSrc: string;
 } & PropsWithChildren;
 
+/**
+ * Description should aim for ~250 chars
+ */
 const ProfileCard: FC<ProfileCardProps> = ({
   personName,
   personTitle,
@@ -31,16 +34,21 @@ const ProfileCard: FC<ProfileCardProps> = ({
     .join("");
 
   return (
-    <Card>
-      <CardHeader>
-        <Avatar>
-          <AvatarImage src={imgSrc} loading="lazy" alt={personName} />
+    <Card className="grid grid-cols-2 gap-8">
+      <CardHeader className="flex flex-1 flex-col items-center">
+        <Avatar className="flex size-fit">
+          <AvatarImage
+            className="size-28"
+            src={imgSrc}
+            loading="lazy"
+            alt={personName}
+          />
           <AvatarFallback>{initials}</AvatarFallback>
         </Avatar>
         <CardTitle>{personName}</CardTitle>
         <CardDescription>{personTitle}</CardDescription>
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      <CardContent className="flex-1">{children}</CardContent>
     </Card>
   );
 };
@@ -84,7 +92,7 @@ export const About: FC = () => {
     <div>
       <ContentWrapper>
         <SectionTitle>Who We Are</SectionTitle>
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-2 gap-8">
           <JimCard />
           <MikeCard />
         </div>
