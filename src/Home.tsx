@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 import { NavBar } from "@/components/NavBar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeroBanner } from "@/elements/hero/HeroBanner";
-import { Services } from "@/elements/hero/Services";
-import { About } from "@/elements/hero/About";
+import { Services } from "@/elements/Services";
+import { About } from "@/elements/About";
 
 export default function Home() {
   return (
