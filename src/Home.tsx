@@ -4,6 +4,7 @@ import { NavBar } from "@/components/NavBar";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeroBanner } from "@/elements/hero/HeroBanner";
 import { Services } from "@/elements/hero/Services";
+import { About } from "@/elements/hero/About";
 
 export default function Home() {
   return (
@@ -62,6 +63,9 @@ export default function Home() {
               </div>
             </div>
           </section> */}
+          <section>
+            <About />
+          </section>
           <section
             id="about"
             className="w-full bg-[#2b53a7] py-12 md:py-24 lg:py-32"
