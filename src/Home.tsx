@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { HeroBanner } from "@/elements/hero/HeroBanner";
 import { Services } from "@/elements/Services";
 import { About } from "@/elements/About";
+import { Contact } from "@/Contact";
 
 export default function Home() {
   return (
@@ -18,88 +19,11 @@ export default function Home() {
           <section id="services">
             <Services />
           </section>
-          {/* <section
-            id="services"
-            className="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-slate-500"
-          >
-            <div className="px-8 md:px-6">
-              <h2 className="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Our Services
-              </h2>
-              <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Contracting</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>
-                      Whether it's government or private contracts, we have you
-                      covered.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Web Development</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>
-                      Custom web applications built with the latest technologies
-                      to meet your specific requirements.
-                    </p>
-                  </CardContent>
-                </Card>
-                <Card>
-                  <CardHeader>
-                    <CardTitle>Mobile App Development</CardTitle>
-                  </CardHeader>
-                  <CardContent>
-                    <p>
-                      Native and cross-platform mobile applications for iOS and
-                      Android devices.
-                    </p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section> */}
-          <section>
+          <section id="about">
             <About />
           </section>
-          <section
-            id="about"
-            className="w-full bg-[#2b53a7] py-12 md:py-24 lg:py-32"
-          >
-            <div className="px-8 md:px-6">
-              <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
-                <div>
-                  <h2 className="mb-4 text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl">
-                    About Us
-                  </h2>
-                  <p className="mb-4 text-white dark:text-gray-400">
-                    Tovadock was started in 2024 by two Army veterans, Jim
-                    Knudstrup and Michael Smith. With over two decades of
-                    combined experience in software engineering, we've helped
-                    numerous clients achieve their goals.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section
-            id="contact"
-            className="w-full bg-gray-100 py-12 md:py-24 lg:py-32 dark:bg-gray-800"
-          >
-            <div className="px-8 md:px-6">
-              <h2 className="mb-12 text-center text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
-                Contact Us
-              </h2>
-              <p className="mb-4 text-center text-gray-500 dark:text-gray-400">
-                Please contact us at{" "}
-                <a href="mailto:tovadockllc@gmail.com">tovadockllc@gmail.com</a>{" "}
-                with any business inquiries.
-              </p>
-            </div>
+          <section id="contact">
+            <Contact />
           </section>
         </main>
         <footer className="w-full py-6 dark:bg-gray-800">
