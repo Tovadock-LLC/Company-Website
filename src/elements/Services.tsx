@@ -56,7 +56,7 @@ const ServiceCard: FC<ServiceCardProps> = ({
 
 export const Services: FC = () => {
   return (
-    <div className="pt-8">
+    <div className="py-8">
       <SectionTitle>What We Offer</SectionTitle>
       <div className="flex flex-col gap-y-8">
         <ServiceCard

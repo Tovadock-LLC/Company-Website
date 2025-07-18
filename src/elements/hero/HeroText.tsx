@@ -34,7 +34,7 @@ export const HeroText: FC = () => {
       <div className="flex flex-col space-y-4">
         <div className="space-y-2">
           <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
-            Step into the Future
+            The Future of Government Starts Here
           </h1>
           <div>
             <p className="max-w-3/4 py-8 text-2xl text-white dark:text-gray-400">

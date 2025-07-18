@@ -27,18 +27,17 @@ const ProfileCard: FC<ProfileCardProps> = ({
   imgSrc,
   children,
 }) => {
-  // Assuming name is space-separated string: take first letter from each
   const initials = personName
     .split(" ")
     .map((name) => name[0])
     .join("");
 
   return (
-    <Card className="grid grid-cols-2 gap-8">
-      <CardHeader className="flex flex-1 flex-col items-center">
+    <Card className="flex">
+      <CardHeader className="flex flex-col items-center">
         <Avatar className="flex size-fit">
           <AvatarImage
-            className="size-28"
+            className="size-32"
             src={imgSrc}
             loading="lazy"
             alt={personName}
@@ -48,7 +47,7 @@ const ProfileCard: FC<ProfileCardProps> = ({
         <CardTitle>{personName}</CardTitle>
         <CardDescription>{personTitle}</CardDescription>
       </CardHeader>
-      <CardContent className="flex-1">{children}</CardContent>
+      <CardContent className="flex-1 pt-6">{children}</CardContent>
     </Card>
   );
 };
@@ -60,10 +59,11 @@ const JimCard: FC = () => {
       personTitle="CEO"
       imgSrc="/images/jim.jpeg"
     >
-      Jim is a visionary leader with a background in the U.S. Army. His
-      strategic thinking and dedication drive the company's mission to deliver
-      top-tier software solutions, ensuring every project aligns with client
-      goals and maintains the highest standards of excellence.
+      Jim draws from a broad range of skills and experiences, ranging from his
+      work as a cryptolinguist for U.S. Army Intelligence, to his studies in
+      Artificial Intelligence at Berkeley, to his engineering work in Silicon
+      Valley. He has built sophisticated applications for some of the biggest
+      names in tech.
     </ProfileCard>
   );
 };
@@ -75,24 +75,27 @@ const MikeCard = () => {
       personTitle="CTO"
       imgSrc="/images/mike.jpeg"
     >
-      Mike brings decades of comprehensive technical expertise to our mission.
-      Evolving from his early career as an Electronics Technician in the U.S.
-      Army, where he honed meticulous problem-solving skills and held a secret
-      security clearance, Mike transitioned into a highly proficient full-stack
-      engineer. His experience spans critical sectors, from the U.S. Army to
-      leading e-commerce and specialized cybersecurity firms. A true engineer's
-      engineer, Mike delivers robust, high-quality solutions across the advanced
-      technologies we champion, ensuring performant and secure digital services.
+      Mike brings decades of technical expertise to our mission, from his early
+      career as an Electronics Technician in the U.S. Army, to his current work
+      as a highly proficient full-stack engineer. He's delivered robust,
+      high-quality software for finance, e-commerce, and specialized
+      cybersecurity firms.
     </ProfileCard>
   );
 };
 
 export const About: FC = () => {
   return (
-    <div>
+    <div className="from-primary to-secondary bg-linear-to-r from-50% py-4">
       <ContentWrapper>
-        <SectionTitle>Who We Are</SectionTitle>
-        <div className="grid grid-cols-2 gap-8">
+        <SectionTitle textColor="light">Who We Are</SectionTitle>
+        <div className="flex justify-center">
+          <div className="text-2xl text-white">
+            Our leadership team unites a diverse network of talent in the spirit
+            of public service.
+          </div>
+        </div>
+        <div className="grid grid-cols-2 gap-8 py-8">
           <JimCard />
           <MikeCard />
         </div>
