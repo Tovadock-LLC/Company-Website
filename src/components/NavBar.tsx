@@ -9,8 +9,7 @@ export const NavBar = () => {
       <ContentWrapper>
         <div className="flex h-14 items-center">
           <a href="/" className="flex items-center space-x-2">
-            <TDLogo className="fill-primary size-[50px]" />
-            {/* <div className="text-4xl font-bold tracking-tighter text-slate-900"> */}
+            <TDLogo className="fill-primary size-10 pt-1" />
             <div className="text-primary text-4xl font-bold tracking-tighter">
               Tovadock
             </div>
