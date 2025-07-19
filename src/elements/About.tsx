@@ -56,7 +56,7 @@ const JimCard: FC = () => {
   return (
     <ProfileCard
       personName="Jim Knudstrup"
-      personTitle="CEO"
+      personTitle="Cofounder, Managing Partner"
       imgSrc="/images/jim.jpeg"
     >
       Jim draws from a broad range of skills and experiences, ranging from his
@@ -72,7 +72,7 @@ const MikeCard = () => {
   return (
     <ProfileCard
       personName="Michael Smith"
-      personTitle="CTO"
+      personTitle="Cofounder, Founding Engineer"
       imgSrc="/images/mike.jpeg"
     >
       Mike brings decades of technical expertise to our mission, from his early
