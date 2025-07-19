@@ -1,18 +1,17 @@
-import type {
-  FC,
-  PropsWithChildren,
-  SVGProps,
-  SVGElementType,
-  ReactNode,
-  ReactElement,
+import {
+  type FC,
+  type PropsWithChildren,
+  type SVGElementType,
+  type ReactElement,
+  useEffect,
+  useRef,
 } from "react";
-
-// import type
+import { clsx } from "clsx";
+import { type Scope, createScope, animate, onScroll } from "animejs";
 
 import { ContentWrapper } from "@/components/helpers/ContentWrapper";
 import { SectionTitle } from "@/components/helpers/SectionTitle";
 
-// import icons for webdev, accesibility, migration, chart, devices
 import {
   WebdevIcon,
   AccessibilityIcon,
@@ -35,21 +34,50 @@ const ServiceCard: FC<ServiceCardProps> = ({
 }) => {
   const bgClass =
     bg === "light"
-      ? "bg-white"
-      : "bg-linear-to-r from-indigo-200 via-gray-100 to-rose-200";
+      ? clsx`bg-white`
+      : clsx`bg-linear-to-r from-indigo-100 via-gray-100 to-rose-100
+      hover:from-indigo-200 hover:via-gray-100 hover:to-rose-200`;
+
+  const rootRef = useRef<HTMLDivElement>(null);
+  const scopeRef = useRef<Scope | null>(null);
+
+  useEffect(() => {
+    if (!rootRef.current) return;
+
+    scopeRef.current = createScope({ root: rootRef }).add(() => {
+      animate("._service", {
+        opacity: [{ from: 0, to: 1 }],
+        y: [{ from: "3rem", to: "0rem" }],
+        duration: 500,
+        autoplay: onScroll({}),
+      });
+    });
+
+    return () => scopeRef.current?.revert();
+  }, []);
+
   return (
-    <div className={`w-full ${bgClass} `}>
-      <ContentWrapper>
-        <div className="flex items-center gap-x-8">
-          <div id="svg-container" className="flex w-48 shrink-0 justify-center">
-            {serviceSvg}
-          </div>
-          <div id="copy-container">
-            <h2 className="text-primary pb-2 text-2xl font-bold">{title}</h2>
-            <div className="text-xl">{children}</div>
-          </div>
+    <div className={`w-full`} ref={rootRef}>
+      <div className="_scroll-container">
+        <div className={`${bgClass} _service transition-colors`}>
+          <ContentWrapper>
+            <div className="flex items-center gap-x-8">
+              <div
+                id="svg-container"
+                className="flex w-48 shrink-0 justify-center"
+              >
+                {serviceSvg}
+              </div>
+              <div id="copy-container">
+                <h2 className="text-primary pb-2 text-2xl font-bold">
+                  {title}
+                </h2>
+                <div className="text-xl">{children}</div>
+              </div>
+            </div>
+          </ContentWrapper>
         </div>
-      </ContentWrapper>
+      </div>
     </div>
   );
 };

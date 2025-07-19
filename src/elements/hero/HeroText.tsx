@@ -41,7 +41,7 @@ export const HeroText: FC = () => {
         opacity: [{ from: 0, to: 1 }],
         y: [{ from: "3rem", to: "0rem" }],
         duration: 500,
-        delay: stagger(300),
+        delay: stagger(500),
       });
     });
 
@@ -49,7 +49,6 @@ export const HeroText: FC = () => {
       x: [{ from: "-1rem", to: "0rem" }],
       opacity: [{ from: 0, to: 1 }],
       duration: 1500,
-      // delay: 1000,
     });
 
     return () => scopeRef.current?.revert();
