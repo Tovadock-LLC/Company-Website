@@ -2,7 +2,8 @@ import { type FC } from "react";
 
 import { Button } from "./components/ui/button";
 import { ContentWrapper } from "@/components/helpers/ContentWrapper";
-import { SectionTitle } from "./components/helpers/SectionTitle";
+import { SectionTitle } from "@/components/helpers/SectionTitle";
+import { CTAButton } from "@/components/helpers/CTAButton";
 
 export const Contact: FC = () => {
   return (
@@ -13,7 +14,7 @@ export const Contact: FC = () => {
           <div className="pb-8 text-2xl">
             We look forward to helping you take your agency to the next level.
           </div>
-          <Button variant="cta">Get Started</Button>
+          <CTAButton>Get Started</CTAButton>
         </div>
       </ContentWrapper>
     </div>

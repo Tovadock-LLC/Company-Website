@@ -1,7 +1,7 @@
 import { type FC, type PropsWithChildren, useEffect, useRef } from "react";
 import { type Scope, createScope, animate, stagger } from "animejs";
 
-import { Button } from "@/components/ui/button";
+import { CTAButton } from "@/components/helpers/CTAButton";
 import { Star } from "@/images/icons";
 
 const BulletPoint: FC<PropsWithChildren> = ({ children }) => {
@@ -13,18 +13,6 @@ const BulletPoint: FC<PropsWithChildren> = ({ children }) => {
       <div className="px-2 font-bold text-white md:text-xl dark:text-gray-400">
         {children}
       </div>
-    </div>
-  );
-};
-
-const CTAButton: FC<PropsWithChildren> = ({ children }) => {
-  return (
-    <div className="flex w-full justify-center py-4">
-      <a href="mailto:tovadockllc@gmail.com">
-        <Button variant="cta" size="lg">
-          {children}
-        </Button>
-      </a>
     </div>
   );
 };
