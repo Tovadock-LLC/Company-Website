@@ -1,11 +1,12 @@
-import { type FC, type PropsWithChildren } from "react";
+import { type FC, type PropsWithChildren, useEffect, useRef } from "react";
+import { type Scope, createScope, animate, stagger } from "animejs";
 
 import { Button } from "@/components/ui/button";
 import { Star } from "@/images/icons";
 
 const BulletPoint: FC<PropsWithChildren> = ({ children }) => {
   return (
-    <div className="flex py-1">
+    <div className="_bullet flex py-1">
       <div className="pt-[6px]">
         <Star className="size-4" />
       </div>
@@ -29,11 +30,35 @@ const CTAButton: FC<PropsWithChildren> = ({ children }) => {
 };
 
 export const HeroText: FC = () => {
+  const rootRef = useRef<HTMLDivElement>(null);
+  const scopeRef = useRef<Scope | null>(null);
+
+  useEffect(() => {
+    if (!rootRef.current) return;
+
+    scopeRef.current = createScope({ root: rootRef }).add(() => {
+      animate("._bullet", {
+        opacity: [{ from: 0, to: 1 }],
+        y: [{ from: "3rem", to: "0rem" }],
+        duration: 500,
+        delay: stagger(300),
+      });
+    });
+
+    animate("._heading", {
+      x: [{ from: "-1rem", to: "0rem" }],
+      opacity: [{ from: 0, to: 1 }],
+      duration: 1500,
+      // delay: 1000,
+    });
+
+    return () => scopeRef.current?.revert();
+  }, []);
   return (
-    <div className="pt-8">
+    <div className="pt-8" ref={rootRef}>
       <div className="flex flex-col space-y-4">
         <div className="space-y-2">
-          <h1 className="text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
+          <h1 className="_heading text-3xl font-bold tracking-tighter text-white sm:text-4xl md:text-5xl lg:text-6xl/none">
             The Future of Government Starts Here
           </h1>
           <div>

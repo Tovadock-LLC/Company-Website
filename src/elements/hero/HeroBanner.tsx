@@ -14,7 +14,8 @@ const EagleAnimation: FC = () => {
   useEffect(() => {
     if (!rootRef.current) return;
 
-    scopeRef.current = createScope({ root: rootRef }).add((self) => {
+    scopeRef.current = createScope({ root: rootRef }).add(() => {
+      // The eye of the eagle is a circle
       const [$circle] = utils.$("circle");
       $circle.setAttribute("class", "fill-white");
 
@@ -59,7 +60,7 @@ export const EagleWrapper: FC = () => {
   useEffect(() => {
     if (!rootRef.current) return;
 
-    scopeRef.current = createScope({ root: rootRef }).add((self) => {
+    scopeRef.current = createScope({ root: rootRef }).add(() => {
       animate(".eagle", {
         scale: [{ from: 1, to: 1.02 }, { to: 1 }],
         y: [
@@ -91,7 +92,7 @@ export const StarsWrapper: FC = () => {
   useEffect(() => {
     if (!rootRef.current) return;
 
-    scopeRef.current = createScope({ root: rootRef }).add((self) => {
+    scopeRef.current = createScope({ root: rootRef }).add(() => {
       animate("._stars", {
         scale: [{ from: 1, to: 1.02 }, { to: 1 }],
         y: [
